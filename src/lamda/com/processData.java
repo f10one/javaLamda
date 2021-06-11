@@ -65,12 +65,12 @@ public class processData {
 		return greenApples;
 	}
 	
-	public void streamRun() {
+	public List<Apple> streamRun() {
 		List<Apple> greenApples = _inventory
-				.stream()
-				.parallel()
+				.parallelStream()
 				.filter((Apple a) -> a.getColor().equals("green"))
 				.collect(toList());
-	}
-	
+		
+		return greenApples;
+	}	
 }
